@@ -22,5 +22,6 @@
     <body>
         <h1>todos</h1>
         <div id="todos"></div>
+        <div id="tasks"></div>
     </body>
 </html>
