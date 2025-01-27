@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import '../../css/app.css';
 
 
 const Tasks = () => {
@@ -28,7 +29,7 @@ const Tasks = () => {
 
     return(
         <div>
-            <h1>tasks</h1>
+            <h1 className="text-3xl font-bold underline text-red-300">tasks</h1>
             <ul>
                 {tasks.map((task,index)=>{
                     return(

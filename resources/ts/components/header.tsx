@@ -1,7 +1,10 @@
+import '../../css/app.css';
 
 function Header() {
     return(
-        <h1>header</h1>
+        <div>
+            <h1 className="text-red-200">header</h1>
+        </div>
     );
 }
 
