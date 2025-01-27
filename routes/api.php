@@ -9,3 +9,4 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::get('tasks',[ApiController::class,'index']);
+Route::post('task',[ApiController::class,'store']);

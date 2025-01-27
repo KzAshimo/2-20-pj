@@ -30,7 +30,15 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $todo = new todo;
+        $todo->content = $request->content;
+
+        $todo->save();
+
+        return response()->json([
+            'status' =>200,
+            'todo' => $todo,
+        ]);
     }
 
     /**
