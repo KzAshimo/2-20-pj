@@ -83,6 +83,17 @@ class ApiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $todo = todo::find($id);
+        if(is_null($todo)){
+            return response()->json([
+                'status' => 400,
+                'message' => '対象のtaskが存在しません',
+            ]);
+        }
+        $todo->delete();
+        return response()->json([
+            'status' => 200,
+            'message' => '動画を削除しました',
+        ]);
     }
 }
