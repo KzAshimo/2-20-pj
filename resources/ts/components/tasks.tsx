@@ -85,7 +85,7 @@ const Tasks: React.FC = () => {
     }
 
     return (
-        <div>
+        <div className="text-white bg-black text-lg text-center">
             <h1 className="text-3xl font-bold underline">tasks</h1>
             <ul>
                 {tasks.map((task) => (
@@ -94,14 +94,14 @@ const Tasks: React.FC = () => {
                             {task.content} -{" "}
                             {task.completed === 0 ? "Incomplete" : "Completed"}
                         </span>
-                        <button
+                        <button className="px-2"
                             onClick={() =>
                                 toggleCompleted(task.id, task.completed)
                             }
                         >
                             ○
                         </button>
-                        <button
+                        <button className="px-2"
                             onClick={() =>
                                 deleteTask(task.id)
                             }
