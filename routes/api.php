@@ -8,5 +8,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('tasks',[ApiController::class,'index']);
-Route::post('task',[ApiController::class,'store']);
+Route::group(['prefix' => 'tasks'],function(){
+Route::get('',[ApiController::class,'index']);
+Route::post('',[ApiController::class,'store']);
+Route::put('{id}',[ApiController::class,'update']);
+});

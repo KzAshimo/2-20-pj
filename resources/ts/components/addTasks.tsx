@@ -13,7 +13,7 @@ const AddTasks = () => {
         setError(null); // リセットエラー
 
         try {
-            const response = await fetch("http://127.0.0.1/api/task", {
+            const response = await fetch("http://127.0.0.1/api/tasks", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const AddTasks = () => {
             console.error("Error creating task:", error);
             setError("Failed to create task. Please try again.");
         } finally {
-            setIsLoading(false); // リクエスト後にボタンを再度有効にする
+           return setIsLoading(false); // リクエスト後にボタンを再度有効にする
         }
     };
 
@@ -62,17 +62,6 @@ const AddTasks = () => {
             >
                 {isLoading ? "Adding..." : "Add Task"}
             </button>
-
-            <div className="mt-4">
-                <h3 className="text-xl font-semibold">Task List</h3>
-                <ul>
-                    {tasks.map((task, index) => (
-                        <li key={index} className="py-2">
-                            {task.content}
-                        </li>
-                    ))}
-                </ul>
-            </div>
         </div>
     );
 };

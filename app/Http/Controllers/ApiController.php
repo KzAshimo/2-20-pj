@@ -62,7 +62,20 @@ class ApiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $todo = todo::find($id);
+        if(is_null($todo)){
+            return response()->json([
+                'status' => 400,
+                'message' => '対象のtaskが存在しません',
+            ]);
+        }
+        $todo->completed = $request->completed ? 1: 0;
+        $todo->save();
+
+        return response()->json([
+            'status' => 200,
+            'todo' => $todo,
+        ]);
     }
 
     /**
